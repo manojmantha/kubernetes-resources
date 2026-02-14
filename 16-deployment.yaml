@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: nginx-container
-        image: nginx
+        image: joindevops/deployment:1.0
 ---
 kind: Service
 apiVersion: v1
