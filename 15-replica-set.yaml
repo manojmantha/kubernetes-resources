@@ -1,0 +1,25 @@
+kind: ReplicaSet
+apiVersion: apps/v1
+metadata:
+  name: nginx-replica
+  labels:
+    app: frontend
+    tier: web 
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      project: expense
+      component: frontend
+      environment: dev
+  template:
+    metadata:
+      name: nginx
+      labels:
+        project: expense
+        component: frontend
+        environment: dev
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
