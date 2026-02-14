@@ -28,7 +28,7 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: nginx-loadBalancer
+  name: nginx
 spec:
   type: LoadBalancer
   selector:
