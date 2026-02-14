@@ -1,0 +1,28 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: node-port
+spec:
+  type: NodePort
+  selector:
+    project: expense
+    component: frontend
+    environment: dev
+  ports:
+  - protocol: TCP
+    port: 80
+    target: 80
+    nodePort: 30007
+---
+kind: Pod
+apiVersion: v1
+metadata:
+  name: nginx
+  labels:
+    project: expense
+    component: frontend
+    environment: dev
+spec:
+  containers:
+  - name: nginx
+    image: nginx
