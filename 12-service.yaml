@@ -2,9 +2,6 @@ kind: Service:
 apiVersion: v1 
 metadata:
   name: nginx
-  labels:
-    name: service 
-    connection: pod-to-pod
 spec:
   selector:
     project: expense
