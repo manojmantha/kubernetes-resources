@@ -18,6 +18,8 @@ kind: StatefulSet
 metadata:
   name: nginx
 spec:
+  nodeSelector:
+    topology.kubernetes.io/zone: us-east-1d
   selector:
     matchLabels:
       app: nginx
